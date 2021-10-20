@@ -1,3 +1,12 @@
+//GAME FUNCTIONS//
+
+// function to generate a random numeric value
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
+};
+
 // fight function (now with parameter for enemy's name)
 var fight = function(enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
@@ -155,12 +164,6 @@ var shop = function() {
       break;
   }
 };
-// function to generate a random numeric value
-var randomNumber = function(min, max) {
-  var value = Math.floor(Math.random() * (max - min + 1) + min);
-
-  return value;
-};
 
 var playerInfo = {
   name: window.prompt("What is your robot's name?"),
@@ -190,8 +193,8 @@ upgradeAttack: function() {
   } 
   else {
     window.alert("You don't have enough money!");
+    }
   }
-}
 };
 
 var enemyInfo = [
@@ -208,6 +211,11 @@ var enemyInfo = [
     attack: randomNumber(10, 14)
   }
 ];
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
 
 // start first game when page loads
 startGame();
